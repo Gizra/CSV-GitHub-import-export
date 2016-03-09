@@ -64,7 +64,7 @@ csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
 	client.create_issue(org_repo, row['title'], row['description'], options = {
 		:assignee => row['assignee_username'], 
-		:labels => [row['label1'],row['label2'],row['label3']]})  #Add or remove label columns here.
+		:labels => [row['label1']]})  #Add or remove label columns here.
 	puts "Imported issue:  #{row['title']}"
 end
 
